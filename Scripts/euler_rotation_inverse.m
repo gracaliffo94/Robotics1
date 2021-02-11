@@ -120,7 +120,7 @@ function [phi, theta, psi] = euler_rotation_inverse(sequence, R)
             end
             
             psi = atan2(-R(3, 1)/cos(theta), R(3, 3)/cos(theta));
-            phi = atan2(-R(1, 2)/cos(theta), R(2, 1)/cos(theta));
+            phi = atan2(-R(1, 2)/cos(theta), R(2, 2)/cos(theta));
             
         case "zxz"
             theta = atan2(sqrt(R(1, 3)^2 + R(2, 3)^2), R(3, 3))*cond + atan2(-sqrt(R(1, 3)^2 + R(2, 3)^2), R(3, 3))*(1-cond);
